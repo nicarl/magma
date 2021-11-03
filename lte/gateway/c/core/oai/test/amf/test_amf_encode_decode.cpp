@@ -21,6 +21,8 @@
 #include "lte/gateway/c/core/oai/tasks/amf/amf_identity.h"
 #include "lte/gateway/c/core/oai/tasks/amf/amf_app_ue_context_and_proc.h"
 #include "lte/gateway/c/core/oai/tasks/amf/include/amf_smf_packet_handler.h"
+#include "lte/gateway/c/core/oai/tasks/amf/amf_map.h"
+#include "lte/gateway/c/core/oai/tasks/amf/amf_app_defs.h"
 
 extern "C" {
 #include "lte/gateway/c/core/oai/common/dynamic_memory_check.h"
@@ -987,11 +989,6 @@ TEST(test_pdu_negative, test_pdu_invalid_pdu_identity) {
 
   ue_context_map.clear();
   delete ue_context;
-}
-
-int main(int argc, char** argv) {
-  ::testing::InitGoogleTest(&argc, argv);
-  return RUN_ALL_TESTS();
 }
 
 }  // namespace magma5g
