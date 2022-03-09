@@ -15,11 +15,13 @@ import abc
 import logging
 from ctypes import c_ulong
 from functools import lru_cache
-from socket import AF_INET, AF_INET6, inet_ntop
+from socket import AF_INET, AF_INET6, AddressFamily, inet_ntop
 from struct import pack
+from typing import Tuple
 
 import psutil
 from magma.kernsnoopd import metrics
+from typing_extensions import Literal
 
 # TASK_COMM_LEN is the string length of binary names that the kernel reports.
 # Value should be the same as found in <linux/sched.h>
@@ -92,7 +94,7 @@ class ByteCounter(EBPFHandler):
         return psutil.Process(pid=pid).cmdline()
 
     @lru_cache(maxsize=1024)
-    def _ip_addr_to_str(self, family: int, daddr: (int, int)) -> str:
+    def _ip_addr_to_str(self, family: Literal[AddressFamily.AF_INET6, AddressFamily.AF_INET], daddr: Tuple[int, int]) -> str:
         """
         _ip_addr_to_str returns a string representation of an IPv4 or IPv6
         address. It caches results in an LRU cache to reduce cost of conversion
@@ -105,9 +107,9 @@ class ByteCounter(EBPFHandler):
         Returns:
             String representation of IP address, e.g., '127.0.0.1'
         """
-        if family == AF_INET:
+        if family == AddressFamily.AF_INET:
             return inet_ntop(AF_INET, pack('I', daddr[0]))
-        elif family == AF_INET6:
+        elif family == AddressFamily.AF_INET6:
             # noinspection PyTypeChecker
             return inet_ntop(AF_INET6, self.Addr(*daddr))
 
