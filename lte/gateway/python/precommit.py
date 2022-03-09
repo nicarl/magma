@@ -16,7 +16,7 @@ import os
 import subprocess  # noqa: S404 ignore security warning about subprocess
 from typing import List
 
-MAGMA_ROOT = os.getenv('MAGMA_ROOT')
+MAGMA_ROOT = os.getenv('MAGMA_ROOT', "")
 LINT_DOCKER_PATH = os.path.join(
     MAGMA_ROOT,
     'lte/gateway/docker/python-precommit/',
