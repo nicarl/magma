@@ -78,7 +78,7 @@ class BaicellsQRTBHandler(BasicEnodebAcsStateMachine):
             self,
             service: MagmaService,
     ) -> None:
-        self._state_map = {}
+        self._state_map: Dict[str, EnodebAcsState] = {}
         super().__init__(service, use_param_key=False)
 
     def reboot_asap(self) -> None:
@@ -318,16 +318,17 @@ class BaicellsQRTBQueuedEventsWaitState(EnodebAcsState):
         Returns:
             AcsMsgAndTransition
         """
-        if self.wait_timer.is_done():
+        if self.wait_timer and self.wait_timer.is_done():
             return AcsMsgAndTransition(
                 msg=models.DummyInput(),
                 next_state=self.done_transition,
             )
-        remaining = self.wait_timer.seconds_remaining()
-        logger.info(
-            'Waiting with eNB configuration for %s more seconds. ',
-            remaining,
-        )
+        if self.wait_timer:
+            remaining = self.wait_timer.seconds_remaining()
+            logger.info(
+                'Waiting with eNB configuration for %s more seconds. ',
+                remaining,
+            )
         return AcsMsgAndTransition(msg=models.DummyInput(), next_state=None)
 
     def state_description(self) -> str:

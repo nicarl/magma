@@ -233,7 +233,7 @@ class BaicellsRemWaitState(EnodebAcsState):
         return AcsReadMsgResult(True, None)
 
     def get_msg(self, message: Any) -> AcsMsgAndTransition:
-        if self.rem_timer.is_done():
+        if self.rem_timer and self.rem_timer.is_done():
             return AcsMsgAndTransition(
                 models.DummyInput(),
                 self.done_transition,
@@ -279,7 +279,7 @@ class WaitEmptyMessageState(EnodebAcsState):
             next_state=self.done_transition,
         )
 
-    def get_msg(self, message: Any) -> AcsReadMsgResult:
+    def get_msg(self, message: Any) -> AcsMsgAndTransition:
         """
         Return a dummy message waiting for the empty message from CPE
         """
@@ -1183,7 +1183,7 @@ class WaitInformMRebootState(EnodebAcsState):
         self.timeout_timer = StateMachineTimer(self.REBOOT_TIMEOUT)
 
         def check_timer() -> None:
-            if self.timeout_timer.is_done():
+            if self.timeout_timer and self.timeout_timer.is_done():
                 self.acs.transition(self.timeout_transition)
                 raise Tr069Error(
                     'Did not receive Inform response after '
@@ -1239,7 +1239,7 @@ class WaitRebootDelayState(EnodebAcsState):
         self.config_timer = StateMachineTimer(self.SHORT_CONFIG_DELAY)
 
         def check_timer() -> None:
-            if self.config_timer.is_done():
+            if self.config_timer and self.config_timer.is_done():
                 self.acs.transition(self.done_transition)
 
         self.timer_handle = \

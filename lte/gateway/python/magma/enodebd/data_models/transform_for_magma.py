@@ -11,7 +11,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 """
 import textwrap
-from typing import Optional, Union
+from typing import Dict, Optional, Union, Set
 
 from magma.enodebd.exceptions import ConfigurationError
 from magma.enodebd.logger import EnodebdLogger as logger
@@ -21,7 +21,7 @@ DUPLEX_MAP = {
     '02': 'FDDMode',
 }
 
-BANDWIDTH_RBS_TO_MHZ_MAP = {
+BANDWIDTH_RBS_TO_MHZ_MAP: Dict[str, Union[float, int]] = {
     'n6': 1.4,
     'n15': 3,
     'n25': 5,
@@ -30,7 +30,7 @@ BANDWIDTH_RBS_TO_MHZ_MAP = {
     'n100': 20,
 }
 
-BANDWIDTH_MHZ_LIST = {1.4, 3, 5, 10, 15, 20}
+BANDWIDTH_MHZ_LIST: Set[Union[float, int]] = {1.4, 3, 5, 10, 15, 20}
 
 
 def duplex_mode(value: str) -> Optional[str]:
@@ -69,14 +69,14 @@ def bandwidth(bandwidth_rbs: Union[str, int, float]) -> float:
     Returns:
         str: Bandwidth in MHz
     """
-    if bandwidth_rbs in BANDWIDTH_RBS_TO_MHZ_MAP:
-        return BANDWIDTH_RBS_TO_MHZ_MAP[bandwidth_rbs]
+    if isinstance(bandwidth_rbs, str) and bandwidth_rbs in BANDWIDTH_RBS_TO_MHZ_MAP:
+        return float(BANDWIDTH_RBS_TO_MHZ_MAP[bandwidth_rbs])
 
     logger.warning('Unknown bandwidth_rbs (%s)', str(bandwidth_rbs))
     if bandwidth_rbs in BANDWIDTH_MHZ_LIST:
-        return bandwidth_rbs
+        return float(bandwidth_rbs)
     elif isinstance(bandwidth_rbs, str):
-        mhz = None
+        mhz: Optional[Union[float, int]] = None
         if bandwidth_rbs.isdigit():
             mhz = int(bandwidth_rbs)
         elif bandwidth_rbs.replace('.', '', 1).isdigit():

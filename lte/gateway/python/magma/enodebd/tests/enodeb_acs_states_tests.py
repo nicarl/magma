@@ -70,7 +70,7 @@ class DummyHandler(BasicEnodebAcsStateMachine):
             self,
             service: MagmaService,
     ) -> None:
-        self._state_map = {}
+        self._state_map: Dict[str, EnodebAcsState] = {}
         super().__init__(service=service, use_param_key=False)
 
     def are_invasive_changes_applied(self) -> bool:

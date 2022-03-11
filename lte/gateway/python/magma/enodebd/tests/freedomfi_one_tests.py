@@ -47,7 +47,7 @@ from magma.enodebd.tr069 import models
 from parameterized import parameterized
 
 SRC_CONFIG_DIR = os.path.join(
-    os.environ.get('MAGMA_ROOT'),
+    os.environ.get('MAGMA_ROOT', ""),
     'lte/gateway/configs',
 )
 

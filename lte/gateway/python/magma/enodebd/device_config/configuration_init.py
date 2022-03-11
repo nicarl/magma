@@ -13,7 +13,7 @@ limitations under the License.
 
 import json
 from collections import namedtuple
-from typing import Any, Optional, Union
+from typing import Any, List, Optional, Union
 
 from lte.protos.mconfig import mconfigs_pb2
 from magma.common.misc_utils import get_ip_from_if
@@ -140,7 +140,7 @@ def _get_enb_yang_config(
     Returns:
         None or a SingleEnodebConfig from YANG with matching serial number
     """
-    enb = []
+    enb: List = []
     mme_list = []
     mme_address = None
     mme_port = None

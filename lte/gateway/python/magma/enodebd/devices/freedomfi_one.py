@@ -465,7 +465,7 @@ class FreedomFiOneHandler(BasicEnodebAcsStateMachine):
             self,
             service,
     ) -> None:
-        self._state_map = {}
+        self._state_map: Dict[str, EnodebAcsState] = {}
         super().__init__(service=service, use_param_key=True)
 
     def reboot_asap(self) -> None:
@@ -766,7 +766,7 @@ class FreedomFiOneTrDataModel(DataModel):
             is_optional=False,
         ),
     }
-    TRANSFORMS_FOR_ENB = {}
+    TRANSFORMS_FOR_ENB: Dict[ParameterName, Callable[[Any], Any]] = {}
     NUM_PLMNS_IN_CONFIG = 1
     for i in range(1, NUM_PLMNS_IN_CONFIG + 1):  # noqa: WPS604
         PARAMETERS[ParameterName.PLMN_N % i] = TrParam(
