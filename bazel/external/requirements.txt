@@ -228,7 +228,7 @@ coverage-lcov==0.2.1 \
     --hash=sha256:3de40d620cb13e43c746126be3154252d1296787a9f2a54b14683763cf9c0c46 \
     --hash=sha256:9be6af6e38a9e9899ebe2b02bfa5d79317d85d41e30090b130c3cceb7cbf8cc6
     # via -r requirements.in
-cryptography==36.0.1 \
+cryptography==41.0.3 \
     --hash=sha256:0a817b961b46894c5ca8a66b599c745b9a3d9f822725221f0e0fe49dc043a3a3 \
     --hash=sha256:2d87cdcb378d3cfed944dac30596da1968f88fb96d7fc34fdae30a99054b2e31 \
     --hash=sha256:30ee1eb3ebe1644d1c3f183d115a8c04e4e603ed6ce8e394ed39eea4a98469ac \
