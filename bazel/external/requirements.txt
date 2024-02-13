@@ -4,7 +4,7 @@
 #
 #    pip-compile --allow-unsafe --generate-hashes --output-file=requirements.txt requirements.in
 #
-aiohttp==3.8.1 \
+aiohttp==3.9.2 \
     --hash=sha256:01d7bdb774a9acc838e6b8f1d114f45303841b89b95984cbb7d80ea41172a9e3 \
     --hash=sha256:03a6d5349c9ee8f79ab3ff3694d6ce1cfc3ced1c9d36200cb8f08ba06bd3b782 \
     --hash=sha256:04d48b8ce6ab3cf2097b1855e1505181bdd05586ca275f2505514a6e274e8e75 \
@@ -228,7 +228,7 @@ coverage-lcov==0.2.1 \
     --hash=sha256:3de40d620cb13e43c746126be3154252d1296787a9f2a54b14683763cf9c0c46 \
     --hash=sha256:9be6af6e38a9e9899ebe2b02bfa5d79317d85d41e30090b130c3cceb7cbf8cc6
     # via -r requirements.in
-cryptography==36.0.1 \
+cryptography==42.0.2 \
     --hash=sha256:0a817b961b46894c5ca8a66b599c745b9a3d9f822725221f0e0fe49dc043a3a3 \
     --hash=sha256:2d87cdcb378d3cfed944dac30596da1968f88fb96d7fc34fdae30a99054b2e31 \
     --hash=sha256:30ee1eb3ebe1644d1c3f183d115a8c04e4e603ed6ce8e394ed39eea4a98469ac \
@@ -893,7 +893,7 @@ pycparser==2.21 \
     --hash=sha256:8ee45429555515e1f6b185e78100aea234072576aa43ab53aefcae078162fca9 \
     --hash=sha256:e644fdec12f7872f86c58ff790da456218b10f863970249516d60a5eaca77206
     # via cffi
-pycryptodome==3.14.1 \
+pycryptodome==3.19.1 \
     --hash=sha256:028dcbf62d128b4335b61c9fbb7dd8c376594db607ef36d5721ee659719935d5 \
     --hash=sha256:12ef157eb1e01a157ca43eda275fa68f8db0dd2792bc4fe00479ab8f0e6ae075 \
     --hash=sha256:2562de213960693b6d657098505fd4493c45f3429304da67efcbeb61f0edfe89 \
