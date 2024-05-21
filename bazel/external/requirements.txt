@@ -1028,7 +1028,7 @@ redis-collections==0.11.0 \
     --hash=sha256:0f6cda00666fdd26e3b8ca47da13a653eaf4cc4e45470a3b09f17d65061fea8a \
     --hash=sha256:d23e8c0f6bf50de10c98a14a3b636ff1bb21119386f884f2641c906832bc4ec9
     # via -r requirements.in
-requests==2.27.1 \
+requests==2.32.0 \
     --hash=sha256:68d7c56fd5a8999887728ef304a6d12edc7be74f1cfa47714fc8b414525c9a61 \
     --hash=sha256:f22fa1e554c9ddfd16e6e41ac79759e17be9e492b3587efa038054674760e72d
     # via -r requirements.in
