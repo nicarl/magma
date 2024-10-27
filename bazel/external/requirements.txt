@@ -4,7 +4,7 @@
 #
 #    pip-compile --allow-unsafe --generate-hashes --output-file=requirements.txt requirements.in
 #
-aiohttp==3.8.1 \
+aiohttp==3.10.2 \
     --hash=sha256:01d7bdb774a9acc838e6b8f1d114f45303841b89b95984cbb7d80ea41172a9e3 \
     --hash=sha256:03a6d5349c9ee8f79ab3ff3694d6ce1cfc3ced1c9d36200cb8f08ba06bd3b782 \
     --hash=sha256:04d48b8ce6ab3cf2097b1855e1505181bdd05586ca275f2505514a6e274e8e75 \
@@ -228,7 +228,7 @@ coverage-lcov==0.2.1 \
     --hash=sha256:3de40d620cb13e43c746126be3154252d1296787a9f2a54b14683763cf9c0c46 \
     --hash=sha256:9be6af6e38a9e9899ebe2b02bfa5d79317d85d41e30090b130c3cceb7cbf8cc6
     # via -r requirements.in
-cryptography==36.0.1 \
+cryptography==42.0.8 \
     --hash=sha256:0a817b961b46894c5ca8a66b599c745b9a3d9f822725221f0e0fe49dc043a3a3 \
     --hash=sha256:2d87cdcb378d3cfed944dac30596da1968f88fb96d7fc34fdae30a99054b2e31 \
     --hash=sha256:30ee1eb3ebe1644d1c3f183d115a8c04e4e603ed6ce8e394ed39eea4a98469ac \
@@ -260,7 +260,7 @@ fakeredis==1.7.1 \
     --hash=sha256:7c2c4ba1b42e0a75337c54b777bf0671056b4569650e3ff927e4b9b385afc8ec \
     --hash=sha256:be3668e50f6b57d5fc4abfd27f9f655bed07a2c5aecfc8b15d0aad59f997c1ba
     # via -r requirements.in
-flask==2.0.3 \
+flask==2.2.5 \
     --hash=sha256:59da8a3170004800a2837844bfa84d49b022550616070f7cb1a659682b2e7c9f \
     --hash=sha256:e1120c228ca2f553b470df4a5fa927ab66258467526069981b3eb0a91902687d
     # via -r requirements.in
@@ -331,7 +331,7 @@ frozenlist==1.3.0 \
     # via
     #   aiohttp
     #   aiosignal
-grpcio==1.44.0 \
+grpcio==1.53.2 \
     --hash=sha256:05467acd391e3fffb05991c76cb2ed2fa1309d0e3815ac379764bc5670b4b5d4 \
     --hash=sha256:0ac72d4b953b76924f8fa21436af060d7e6d8581e279863f30ee14f20751ac27 \
     --hash=sha256:11f811c0fffd84fca747fbc742464575e5eb130fd4fb4d6012ccc34febd001db \
@@ -480,7 +480,7 @@ hyperframe==5.2.0 \
     --hash=sha256:5187962cb16dcc078f23cb5a4b110098d546c3f41ff2d4038a9896893bbd0b40 \
     --hash=sha256:a9f5c17f2cc3c719b917c4f33ed1c61bd1f8dfac4b1bd23b7c80b3400971b41f
     # via h2
-idna==3.3 \
+idna==3.7 \
     --hash=sha256:84d9dd047ffa80596e0f246e2eab0b391788b0503584e8945f2368256d2735ff \
     --hash=sha256:9d643ff0a55b762d5cdb124b8eaa99c66322e2157b69160bc32796e824360e6d
     # via
@@ -499,7 +499,7 @@ itsdangerous==2.1.0 \
     --hash=sha256:29285842166554469a56d427addc0843914172343784cb909695fdbe90a3e129 \
     --hash=sha256:d848fcb8bc7d507c4546b448574e8a44fc4ea2ba84ebf8d783290d53e81992f5
     # via flask
-jinja2==3.0.3 \
+jinja2==3.1.4 \
     --hash=sha256:077ce6014f7b40d03b47d1f1ca4b0fc8328a692bd284016f806ed0eaca390ad8 \
     --hash=sha256:611bb273cd68f3b993fabdc4064fc858c5b47a973cb5aa7999ec1ba405c87cd7
     # via flask
@@ -821,7 +821,7 @@ priority==1.3.0 \
 prometheus_client==0.3.1 \
     --hash=sha256:17bc24c09431644f7c65d7bce9f4237252308070b6395d6d8e87767afe867e24
     # via -r requirements.in
-protobuf==3.19.4 \
+protobuf==3.19.5 \
     --hash=sha256:072fbc78d705d3edc7ccac58a62c4c8e0cec856987da7df8aca86e647be4e35c \
     --hash=sha256:09297b7972da685ce269ec52af761743714996b4381c085205914c41fcab59fb \
     --hash=sha256:16f519de1313f1b7139ad70772e7db515b1420d208cb16c6d7858ea989fc64a9 \
@@ -1016,7 +1016,7 @@ pyyaml==6.0 \
     #   -r requirements.in
     #   bravado-core
     #   swagger-spec-validator
-redis==4.1.4 \
+redis==4.3.6 \
     --hash=sha256:04629f8e42be942c4f7d1812f2094568f04c612865ad19ad3ace3005da70631a \
     --hash=sha256:1d9a0cdf89fdd93f84261733e24f55a7bbd413a9b219fdaf56e3e728ca9a2306
     # via
@@ -1160,7 +1160,7 @@ webcolors==1.11.1 \
     --hash=sha256:76f360636957d1c976db7466bc71dcb713bb95ac8911944dffc55c01cb516de6 \
     --hash=sha256:b8cd5d865a25c51ff1218f0c90d0c0781fc64312a49b746b320cf50de1648f6e
     # via jsonschema
-werkzeug==2.0.3 \
+werkzeug==3.0.6 \
     --hash=sha256:1421ebfc7648a39a5c58c601b154165d05cf47a3cd0ccb70857cbdacf6c8f2b8 \
     --hash=sha256:b863f8ff057c522164b6067c9e28b041161b4be5ba4d0daceeaa50a163822d3c
     # via flask
@@ -1297,13 +1297,13 @@ yarl==1.7.2 \
     --hash=sha256:fce78593346c014d0d986b7ebc80d782b7f5e19843ca798ed62f8e3ba8728576 \
     --hash=sha256:fd547ec596d90c8676e369dd8a581a21227fe9b4ad37d0dc7feb4ccf544c2d59
     # via aiohttp
-zipp==3.7.0 \
+zipp==3.19.1 \
     --hash=sha256:9f50f446828eb9d45b267433fd3e9da8d801f614129124863f9c51ebceafb87d \
     --hash=sha256:b47250dd24f92b7dd6a0a8fc5244da14608f3ca90a5efcd37a3b1642fac9a375
     # via importlib-metadata
 
 # The following packages are considered to be unsafe in a requirements file:
-setuptools==49.6.0 \
+setuptools==70.0.0 \
     --hash=sha256:46bd862894ed22c2edff033c758c2dc026324788d758e96788e8f7c11f4e9707 \
     --hash=sha256:4dd5bb0a0a0cff77b46ca5dd3a84857ee48c83e8223886b556613c724994073f
     # via
